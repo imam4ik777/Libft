@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: imatakis <imatakis@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 23:04:26 by imatakis          #+#    #+#              #
-#    Updated: 2024/01/02 18:30:44 by imatakis         ###   ########.fr        #
+#    Updated: 2024/01/02 22:57:01 by imatakis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_isalpha.c ft_strlen.c \
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_strlen.c ft_isascii.c \
 
 OBJ = $(SRC:.c=.o)
 
