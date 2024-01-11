@@ -6,11 +6,14 @@
 #    By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 23:04:26 by imatakis          #+#    #+#              #
-#    Updated: 2024/01/02 22:57:01 by imatakis         ###   ########.fr        #
+#    Updated: 2024/01/11 20:23:58 by imatakis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_strlen.c ft_isascii.c \
+SRC =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_strlen.c \
+		ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+		ft_memset.c ft_memcpy.c ft_memcmp.c ft_strncmp.c \
+		ft_bzero.c ft_memmove.c \
 
 OBJ = $(SRC:.c=.o)
 
