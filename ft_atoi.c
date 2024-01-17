@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 21:31:09 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/14 04:26:31 by imatakis         ###   ########.fr       */
+/*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
+/*   Updated: 2024/01/13 22:17:16 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_atoi(const char *str)
 {
-	unsigned char	*dst1;
-	unsigned char	*src1;
+	int i = 0;
+	int sign = 1;
+	int result = 0;
 
-	dst1 = (unsigned char *)dst;
-	src1 = (unsigned char *)src;
-	if (dst1 == NULL && src1 == NULL)
-		return (NULL);
-	if (dst < src)
-		ft_memcpy(dst1, src1, len);
-	else
+	while (str[i] == ' ' || str[i] == '\t')
 	{
-		while (len--)
-		{
-			dst1[len] = src1[len];
-		}
+		i++;
 	}
-	return (dst1);
+	if (str[i] == '-')
+	{
+		sign = -1;
+	}
+	if (str[i] == '+' || str[i] == '-')
+	{
+		i++;
+	}
+	while (str[i] > 0 && str[i] < 9)
+	{
+	}
 }

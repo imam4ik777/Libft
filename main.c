@@ -6,7 +6,7 @@
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 22:41:44 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/11 21:32:22 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/01/14 04:25:31 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,25 +192,67 @@ int	main(void)
 	printf("Original function: %s\n", str1);
 }*/
 
-int	main(void)
-{
-	// char	*str1 = av[1];
-	// if (ac == 4)
-	// {
-	// 	ft_memmove(av[1], av[2], atoi(av[3]));
-	// 	printf("%s\n", av[1]);
-	// 	memmove(str1, av[2], atoi(av[3]));
-	// 	printf("%s\n", str1);
-	// }
-	char str[] = "Hello, World!";
-	char str1[] = "Hello, World!";
-	char str2[] = "Hello, World!";
-	// Overlapping case: Copy part of the string to a position within the same string
-	memmove(str + 7, str + 1, 5);
-	ft_memmove(str1 + 7, str1 + 1, 5);
-	ft_memcpy(str2 + 7, str2 + 1, 5);
-	printf("memove %s\n", str);
-	printf("ft_memove %s\n", str1);
-	printf("memcpy %s\n", str2);
-	return (0);
-}
+// int	main(void)
+// {
+// char	*str1 = av[1];
+// if (ac == 4)
+// {
+// 	ft_memmove(av[1], av[2], atoi(av[3]));
+// 	printf("%s\n", av[1]);
+// 	memmove(str1, av[2], atoi(av[3]));
+// 	printf("%s\n", str1);
+// }
+// 	char str[] = "Hello, World!";
+// 	char str1[] = "Hello, World!";
+// 	char str2[] = "Hello, World!";
+// 	// Overlapping case: Copy part of the string to a position within the same string
+// 	memmove(str + 7, str + 1, 5);
+// 	ft_memmove(str1 + 7, str1 + 1, 5);
+// 	ft_memcpy(str2 + 7, str2 + 1, 5);
+// 	printf("memove %s\n", str);
+// 	printf("ft_memove %s\n", str1);
+// 	printf("memcpy %s\n", str2);
+// 	return (0);
+// }
+
+// int main(int ac, char **av)
+// {
+//     if (ac == 3)
+// 	{
+//     	char *str = av[1];
+//     	char let = av[2][0];
+//     	char *result = ft_strchr(str, let);
+
+//     	if (result != NULL)
+// 		{
+//         	printf("Character '%c' found at position %ld\n", let, result - str);
+// 			return (0);
+//     	}
+// 		else
+// 		{
+//         	printf("Character '%c' not found in the string\n", let);
+// 			return (1);
+//     	}
+// 	}
+// }
+// 
+// int main(int ac, char **av)
+// {
+//     if (ac == 3)
+// 	{
+//     	char *str = av[1];
+//     	char let = av[2][0];
+//     	char *result = ft_strrchr(str, let);
+
+//     	if (result != NULL)
+// 		{
+//         	printf("Character '%c' found at position %ld\n", let, result - str);
+// 			return (0);
+//     	}
+// 		else
+// 		{
+//         	printf("Character '%c' not found in %s\n", let, str);
+// 			return (1);
+//     	}
+// 	}
+// }

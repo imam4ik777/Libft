@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 21:31:09 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/14 04:26:31 by imatakis         ###   ########.fr       */
+/*   Created: 2024/01/13 23:08:22 by imatakis          #+#    #+#             */
+/*   Updated: 2024/01/14 04:19:10 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*dst1;
-	unsigned char	*src1;
+	char *str = (char *)s;
+	int i = 0;
 
-	dst1 = (unsigned char *)dst;
-	src1 = (unsigned char *)src;
-	if (dst1 == NULL && src1 == NULL)
-		return (NULL);
-	if (dst < src)
-		ft_memcpy(dst1, src1, len);
-	else
+	while (str[i] != '\0')
 	{
-		while (len--)
+		if (str[i] == c)
 		{
-			dst1[len] = src1[len];
+			return (&str[i]);
 		}
+		i++;
 	}
-	return (dst1);
+	return (0);
 }
