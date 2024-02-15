@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:10:06 by imatakis         ###   ########.fr       */
+/*   Created: 2024/01/25 19:51:04 by imatakis          #+#    #+#             */
+/*   Updated: 2024/02/14 20:13:10 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	long		sign;
-	long long	result;
+	size_t	i;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == 45 && *str++)
-		sign = -1;
-	else if (*str == 43)
-		str++;
-	while (*str >= 48 && *str <= 57)
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }

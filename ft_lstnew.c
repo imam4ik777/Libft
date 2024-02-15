@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:10:06 by imatakis         ###   ########.fr       */
+/*   Created: 2024/02/03 05:40:26 by imatakis          #+#    #+#             */
+/*   Updated: 2024/02/14 20:28:08 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstnew(void *content)
 {
-	long		sign;
-	long long	result;
+	t_list	*new;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == 45 && *str++)
-		sign = -1;
-	else if (*str == 43)
-		str++;
-	while (*str >= 48 && *str <= 57)
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	new = malloc(sizeof(t_list));
+	if (!new)
+	{
+		return (NULL);
+	}
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
 }

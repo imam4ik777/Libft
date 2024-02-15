@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:10:06 by imatakis         ###   ########.fr       */
+/*   Created: 2024/01/18 17:47:14 by imatakis          #+#    #+#             */
+/*   Updated: 2024/02/14 20:12:37 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	long		sign;
-	long long	result;
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == 45 && *str++)
-		sign = -1;
-	else if (*str == 43)
-		str++;
-	while (*str >= 48 && *str <= 57)
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	i = 0;
+	if (!dst && !dstsize)
+		return (0);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (dstsize <= dst_len)
+		return (dstsize + src_len);
+	while (dst_len + 1 < dstsize && src[i])
+	{
+		dst[dst_len] = src[i];
+		dst_len++;
+		i++;
+	}
+	dst[dst_len] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[i]));
 }

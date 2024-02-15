@@ -6,7 +6,7 @@
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:07:15 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/11 21:32:00 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:09:52 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while (str1[i] != '\0' && i < n - 1 && str1[i] == str2[i])
-	{
+	if (n == 0)
+		return (0);
+	while (str1[i] && i < n - 1 && str1[i] == str2[i])
 		i++;
-	}
 	return (str1[i] - str2[i]);
 }

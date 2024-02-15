@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:10:06 by imatakis         ###   ########.fr       */
+/*   Created: 2024/01/23 21:04:34 by imatakis          #+#    #+#             */
+/*   Updated: 2024/02/14 20:26:28 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	long		sign;
-	long long	result;
+	size_t	k;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == 45 && *str++)
-		sign = -1;
-	else if (*str == 43)
-		str++;
-	while (*str >= 48 && *str <= 57)
-		result = result * 10 + (*str++ - 48);
-	return (result * sign);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (str == NULL)
+		return (NULL);
+	k = 0;
+	i = 0;
+	j = 0;
+	while (s1[i])
+		str[k++] = s1[i++];
+	while (s2[j])
+		str[k++] = s2[j++];
+	str[k] = '\0';
+	return (str);
 }

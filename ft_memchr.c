@@ -6,49 +6,26 @@
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:21:51 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/17 16:42:39 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:11:49 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, size_t n)
-
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char *str = (unsigned char *)s;
-	size_t	i = 0;
+	unsigned char	*str;
+	size_t			i;
 
-	if (i < n)
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		i++;
-	}
-
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
+		if (str[i] == (unsigned char)c)
 		{
-			return (&str[i]);
+			return ((void *)&str[i]);
 		}
 		i++;
 	}
-}
-
-int	main(int ac, char **av)
-{
-	if (ac == 4)
-	{
-		char *str1 = av[1];
-		char let = av[2][0];
-		size_t len = ft_strlen;
-		void *result = ft_memchr(str1, let, ft_strlen(str1));
-		
-		if (result != NULL)
-		{
-			printf("Character %c found at %ld position\n", let, (char *) result - str1);
-		}
-		else
-		{
-			printf("Character %c not founded\n", let);
-		}
-	}
+	return (NULL);
 }

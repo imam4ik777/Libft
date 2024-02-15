@@ -6,7 +6,7 @@
 /*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 02:46:46 by imatakis          #+#    #+#             */
-/*   Updated: 2024/01/14 04:25:46 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/02/14 20:13:06 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *str = (char *)s;
-	int i = ft_strlen(str);
+	char	*str;
+	int		i;
 
+	str = (char *)s;
+	i = ft_strlen(str);
 	while (i >= 0)
 	{
 		if (str[i] == (char)c)
