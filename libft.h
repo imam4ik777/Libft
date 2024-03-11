@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
+/*   By: imatakis <imatakis@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 23:04:19 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:33:23 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:48:13 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_itoa
+{
+	int		len;
+	char	*arr;
+	int		sign;
+}			t_itoa;
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -70,7 +77,8 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void(*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

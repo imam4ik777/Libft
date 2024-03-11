@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
+/*   By: imatakis <imatakis@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 18:59:20 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:21:44 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/02/15 20:48:04 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct s_itoa
-{
-	int		len;
-	char	*arr;
-	int		sign;
-}			t_itoa;
 
 int	ft_numlen(int n)
 {

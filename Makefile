@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+         #
+#    By: imatakis <imatakis@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 23:04:26 by imatakis          #+#    #+#              #
-#    Updated: 2024/02/14 20:20:20 by imatakis         ###   ########.fr        #
+#    Updated: 2024/02/19 23:11:28 by imatakis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,9 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(BONUS_OBJ) $(OBJ)
-	ar -rcs $(NAME) $(BONUS_OBJ) $(OBJ)
+bonus: $(BONUS_OBJ)
+	@if [ -n "BONUS_OBJ" ]; then \
+		ar -rcs $(NAME) $(BONUS_OBJ); \
+	fi
 
 .PHONY: all clean fclean re bonus

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imatakis <@student.42abudhabi.ae>          +#+  +:+       +#+        */
+/*   By: imatakis <imatakis@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:33:52 by imatakis          #+#    #+#             */
-/*   Updated: 2024/02/14 20:10:06 by imatakis         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:02:23 by imatakis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int	ft_atoi(const char *str)
 	else if (*str == 43)
 		str++;
 	while (*str >= 48 && *str <= 57)
+	{
+		if (sign == -1 && result * 10 < result)
+			return (0);
+		else if (sign == 1 && result * 10 < result)
+			return (-1);
 		result = result * 10 + (*str++ - 48);
+	}
 	return (result * sign);
 }
